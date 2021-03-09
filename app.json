@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/service/service",
+    "pages/userInfo/userInfo"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#999fff",
+    "navigationBarTitleText": "HOLD",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "门锁",
+        "iconPath": "/images/index_default.png",
+        "selectedIconPath": "/images/index_select.png"
+      },
+      {
+        "pagePath": "pages/service/service",
+        "text": "服务",
+        "iconPath": "/images/service_default.png",
+        "selectedIconPath": "/images/service_select.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

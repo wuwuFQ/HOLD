@@ -1,0 +1,50 @@
+<!--pages/userInfo/userInfo.wxml-->
+<view class="top-tip">请填写有效信息，方便我们精准回访和快速维修智能门锁</view>
+<van-field
+    model:value="{{ username }}"
+    required
+    clearable
+    label="真实姓名"
+    placeholder="请输入您的真实姓名"
+  />
+  <van-field
+    model:value="{{ idCard }}"
+    required
+    clearable
+    type="idcard"
+    label="身份证号"
+    placeholder="请输入您的身份证号码"
+  />
+  <van-field
+    model:value="{{ phone }}"
+    required
+    clearable
+    type="number"
+    label="联系方式"
+    placeholder="请输入您的手机号码"
+  />
+  <picker mode="region" model:value="{{region_start}}" bindchange="bindRegionChange">
+    <van-field label="家庭住址" type="textarea" autosize is-link required>
+      <view slot="input">
+        {{region_start[0]}}-{{region_start[1]}}-{{region_start[2]}}
+      </view>
+    </van-field>
+  </picker>
+
+  <van-field
+    model:value="{{ address }}"
+    required
+    clearable
+    type="textarea"
+    label="详细住址"
+    placeholder="请输入门锁安装地址"
+  />
+  <van-field
+    model:value="{{ idCard }}"
+    required
+    clearable
+    label="设备号码"
+    placeholder="请输入门锁设备编号"
+  />
+
+  <button class="saveButton" bindtap="saveButtonClick">保存</button>
