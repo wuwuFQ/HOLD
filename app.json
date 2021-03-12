@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/service/service",
-    "pages/userInfo/userInfo"
+    "pages/userInfo/userInfo",
+    "pages/video/video"
   ],
   "window": {
     "backgroundTextStyle": "dark",

@@ -6,9 +6,13 @@
       <open-data type="userNickName"></open-data>
   </view>
 
-<view style="margin-top: 40px">
+<view wx:if="{{isLogin}}" style="margin-top: 40px">
 <van-cell title="个人信息" is-link value="" bind:click="userInfoClick"/>
-<van-cell title="开锁流程" is-link value="" />
-<van-cell title="修改密码" is-link value="" />
-<van-cell title="设置指纹" is-link value="" />
+<van-cell title="开锁流程" is-link value="" bind:click="playVideoClick" id="1"/>
+<van-cell title="修改密码" is-link value="" bind:click="playVideoClick" id="2"/>
+<van-cell title="设置指纹" is-link value="" bind:click="playVideoClick" id="3"/>
+</view>
+
+<view wx:else>
+  <button class="infoButton" bindtap="userInfoClick">完善信息才可使用功能</button>
 </view>
