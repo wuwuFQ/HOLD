@@ -12,13 +12,18 @@ Page({
  * 生命周期函数--监听页面加载
  */
   onLoad() {
-
+    app.checkUser(this.isPerfectInformation);
   },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (app.isNull(app.globalData.userInfo.id)) {
+    this.isPerfectInformation();
+  
+  },
+// 是不是完善好的信息
+  isPerfectInformation() {
+    if (app.isNull(app.globalData.userInfo) || app.isNull(app.globalData.userInfo.name)) {
       this.setData({
         isLogin: false,
       })  
@@ -27,10 +32,7 @@ Page({
         isLogin: true,
       }) 
     }
-
-  },
-
-
+   },
   // 事件处理函数
   bindViewTap() {
     wx.showToast({
@@ -59,7 +61,7 @@ Page({
       url: '../video/video',
     })
   },
-
+/*
   wxLogin() {
     var that = this;
     wx.login({
@@ -114,5 +116,5 @@ Page({
     }
   })
   },
-
+*/
 })

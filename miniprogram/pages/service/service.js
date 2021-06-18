@@ -31,17 +31,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (app.isNull(app.globalData.userInfo)) {
+    if (app.isNull(app.globalData.userInfo) || app.isNull(app.globalData.userInfo.name)) {
       this.setData({
         isLogin: false,
       })
-      this.wxLogin();
     } else {
       this.setData({
         isLogin: true,
       })
     }
-
   },
 
   /**

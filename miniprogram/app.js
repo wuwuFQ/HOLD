@@ -23,17 +23,26 @@ App({
     //   // this.wxLogin();
     // }
    
-    this.checkUser();
   },
   globalData: {
     openid: null,
-    userInfo: null,
+    userInfo: {
+      openid: '',
+      name: '',
+      idCard: '',
+      phone: '',
+      provinces: '',
+      city: '',
+      areas: '',
+      address: '',
+      device: '',
+      },
     // httpURL: 'https://localhost/',   //测试
     httpURL: 'https://wuwufq.asia/',   //正式
 
   },
   //判断是否是新用户， 是就增加记录
-  checkUser() { 
+  checkUser(callBack) { 
     wx.cloud.callFunction({ 
     name: 'user_info',
     data: {
@@ -49,11 +58,13 @@ App({
          },
          success: ress => {
           console.log("新增用户_id：" + ress.result._id);
+          callBack();
          }
         })
       } else {
         this.globalData.userInfo = result;
         console.log("老用户：" + result.openid);
+        callBack();
       }
     },
     fail: console.error

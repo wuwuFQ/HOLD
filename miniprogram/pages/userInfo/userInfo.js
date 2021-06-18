@@ -18,11 +18,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (!app.isNull(app.globalData.userInfo)) {
+    if (!app.isNull(app.globalData.userInfo.name)) {
       let model = app.globalData.userInfo;
       this.setData({
         name: model.name,
-        idCard: model.idcard,
+        idCard: model.idCard,
         phone: model.phone,
         region: [model.provinces, model.city, model.areas],
         address: model.address,
@@ -89,14 +89,7 @@ Page({
   /* 保存 */
   saveButtonClick() {
     var that = this;
-    if (app.isNull(app.globalData.openid)) {
-      app.wxLogin();
-      wx.showToast({
-        title: 'openID为空，请重试',
-        icon: 'none'
-      })
-      return;
-    }
+  
     if (app.isNull(that.data.name)) {
       wx.showToast({
         title: '请填写您的姓名',
@@ -132,24 +125,43 @@ Page({
       })
       return;
     }
-    if (app.isNull(that.data.device)) {
-      wx.showToast({
-        title: '请填写设备编号',
-        icon: 'none'
-      })
-      return;
-    }
+    // if (app.isNull(that.data.device)) {
+    //   wx.showToast({
+    //     title: '请填写设备编号',
+    //     icon: 'none'
+    //   })
+    //   return;
+    // }
     var data = {
-      openid: app.globalData.openid,
       name: that.data.name,
-      idcard: that.data.idCard,
+      idCard: that.data.idCard,
       phone: that.data.phone,
       provinces: that.data.region[0],
       city: that.data.region[1],
       areas: that.data.region[2],
       address: that.data.address,
-      deviceNumber: that.data.device,
     };
+    wx.cloud.callFunction({
+      name: 'user_update',
+      data: data,
+      success: res => {
+        app.globalData.userInfo = data;
+        wx.showToast({
+          title: '保存成功',
+          icon: 'success',
+          duration: 1500,
+          success: () => {
+            setTimeout(() => {
+              wx.navigateBack({
+                delta: 1,
+              })
+            }, 1500);
+          }
+        })
+      }
+  
+    })
+    /*
     if (!app.isNull(app.globalData.userInfo)) {
       data.id = app.globalData.userInfo.id   
     } 
@@ -179,6 +191,6 @@ Page({
           })
         }
       }
-    })
+    })*/
   }
 })

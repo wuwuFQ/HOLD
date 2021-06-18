@@ -9,9 +9,10 @@ cloud.init({
 const db = cloud.database()
 const _ = db.command     //获取数据库查询及更新指令
 exports.main = async (event, context) => {
+  const wxContext = cloud.getWXContext();
   try {
     return await db.collection("hold_user").where({
-      openid: event.openid
+      openid: _.eq(wxContext.OPENID)
     }).update({
       data: {
         name: event.name,

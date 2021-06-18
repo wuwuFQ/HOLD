@@ -41,12 +41,12 @@
     label="详细地址"
     placeholder="上门服务详细地址"
   />
-  <van-field
+  <!-- <van-field
     model:value="{{ device }}"
     required
     clearable
     label="设备号码"
     placeholder="请输入门锁设备编号"
-  />
+  /> -->
 
   <button class="saveButton" bindtap="saveButtonClick">保存</button>
