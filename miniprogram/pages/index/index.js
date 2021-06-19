@@ -61,6 +61,18 @@ Page({
       url: '../video/video',
     })
   },
+
+  callMobilClick() {
+    wx.makePhoneCall({
+      phoneNumber: '19902019616',
+    })
+  },
+
+  pushBtnHandle() {
+
+  },
+
+  
 /*
   wxLogin() {
     var that = this;

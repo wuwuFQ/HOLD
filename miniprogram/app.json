@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/service/service",
     "pages/userInfo/userInfo",
-    "pages/video/video"
+    "pages/video/video",
+    "pages/mine/mine"
   ],
   "window": {
     "backgroundTextStyle": "dark",

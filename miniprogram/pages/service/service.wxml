@@ -1,6 +1,15 @@
 <!--pages/service/service.wxml-->
 <view  wx:if="{{isLogin}}">
-<view class="peopleList" wx:for="{{dataArr}}">
+  <van-tree-select
+  items="{{ items }}"
+  height="100%"
+  main-active-index="{{ mainActiveIndex }}"
+  active-id="{{ activeId }}"
+  bind:click-nav="onClickNav"
+  bind:click-item="onClickItem"
+>
+
+<view class="peopleList" slot="content" wx:for="{{6}}">
   <view class="peopleItem" bindtap="itemClickHandle" id="{{index}}">
     <view class="imageView">
       <image src="../../images/people02.png" mode="aspectFit" style="width: 100%; height: 100%"></image>
@@ -15,6 +24,7 @@
     </view>
   </view>
 </view>
+</van-tree-select>
 </view>
 <view wx:else>
   <button class="infoButton" bindtap="userInfoClick">完善信息才可使用功能</button>

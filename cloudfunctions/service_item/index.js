@@ -11,7 +11,4 @@ const _ = db.command     //获取数据库查询及更新指令
 exports.main = async (event, context) => {
   return await db.collection("hold_housekeeping_item")
   .get()
-  .then(res => {
-    console.log(res.data)
-  })
 }

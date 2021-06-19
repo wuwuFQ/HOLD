@@ -7,9 +7,14 @@ Page({
    * 页面的初始数据
    */
   data: {
+    //右侧
     dataArr: [],
     // 是否已登录并完善信息
     isLogin: false,
+    mainActiveIndex: 0,
+    activeId: null,
+    //左侧
+    items: [],
 
   },
 
@@ -17,7 +22,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getPeopleList();
+    this.getServiceItems();
   },
 
   /**
@@ -77,6 +82,57 @@ Page({
 
   },
 
+
+
+  onClickNav({ detail = {} }) {
+    this.setData({
+      mainActiveIndex: detail.index || 0,
+    });
+    console.log(detail);
+  },
+
+  onClickItem({ detail = {} }) {
+    const activeId = this.data.activeId === detail.id ? null : detail.id;
+
+    this.setData({ activeId });
+  },
+
+  itemClickHandle(e) {
+    wx.makePhoneCall({
+      phoneNumber: '19902019616',
+    })
+  },
+  // 个人信息
+  userInfoClick(e) {
+    wx.navigateTo({
+      url: '../userInfo/userInfo',
+    })
+  },
+  //加载左侧数据
+  getServiceItems() {
+    var that = this;
+    wx.cloud.callFunction({
+      name: 'service_item',
+      data: {},
+      success: res => {
+        var data = res.result.data;
+        if (data.length != 0) {
+          that.setData({
+            items: data,
+          })
+        }
+        console.log(res);
+      }
+
+    })
+  },
+  // 加载右侧侧数据
+  getServiceList() {
+
+  },
+
+
+  /*
   getPeopleList() {
     var that = this;
     wx.request({
@@ -94,13 +150,6 @@ Page({
       }
     })
   },
-
-  itemClickHandle(e) {
-    wx.makePhoneCall({
-      phoneNumber: '19902019616',
-    })
-  },
-
 
   wxLogin() {
     var that = this;
@@ -156,13 +205,8 @@ Page({
       }
     })
   },
+*/
 
-  // 个人信息
-  userInfoClick(e) {
-    wx.navigateTo({
-      url: '../userInfo/userInfo',
-    })
-  },
 
 
 })

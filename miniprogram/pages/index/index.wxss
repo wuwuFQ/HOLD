@@ -23,3 +23,17 @@
   line-height: 40px;
   border-radius: 20px;
 }
+
+.pushBtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 80rpx;
+  margin-bottom: 80rpx;
+}
+
+button {
+  width: 100%;
+}
+.van-button__text {
+  color: #333;
+}
