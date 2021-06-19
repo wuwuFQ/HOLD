@@ -1,0 +1,6 @@
+/* miniprogram/pages/mineService/mineService.wxss */
+
+
+.value-class {
+  flex: none !important;
+}

@@ -68,8 +68,10 @@ Page({
     })
   },
 
-  pushBtnHandle() {
-
+  serviceProjectClick() {
+wx.navigateTo({
+  url: '../mineService/mineService',
+})
   },
 
   

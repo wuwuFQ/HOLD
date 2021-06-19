@@ -12,10 +12,9 @@
 <van-cell title="修改密码" is-link value="" bind:click="playVideoClick" id="2"/>
 <van-cell title="设置指纹" is-link value="" bind:click="playVideoClick" id="3"/>
 <van-cell title="商务合作" is-link value="" bind:click="callMobilClick" />
+<van-cell title="我的服务项目" is-link value="" bind:click="serviceProjectClick" />
 
-<view class="pushBtn">
-  <view style="width: 80%"><van-button color="linear-gradient(to right, #00eeffe5, #999fff)"  bindtap="pushBtnHandle">发布服务</van-button></view>
-</view>
+
 
 </view>
 

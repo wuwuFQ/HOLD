@@ -4,7 +4,8 @@
     "pages/service/service",
     "pages/userInfo/userInfo",
     "pages/video/video",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/mineService/mineService"
   ],
   "window": {
     "backgroundTextStyle": "dark",

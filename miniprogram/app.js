@@ -70,6 +70,7 @@ App({
     fail: console.error
   }) 
 },
+/*
   wxLogin() {
     var that = this;
     wx.login({
@@ -100,7 +101,7 @@ App({
       }
     })
   },
-
+*/
  
   // obj是空值?
   isNull: function (obj) {
