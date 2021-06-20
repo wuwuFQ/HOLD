@@ -115,7 +115,6 @@ Page({
     const { index } = event.currentTarget.dataset;
     const checkbox = this.selectComponent(`.checkboxes-${index}`);
     checkbox.toggle();
-    console.log(event);
   },
 
   noop() { },

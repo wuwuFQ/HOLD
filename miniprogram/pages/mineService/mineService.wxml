@@ -15,8 +15,11 @@
       <van-checkbox
         catch:tap="noop"
         class="checkboxes-{{ index }}"
-        name="{{ item.text }}"
+        name="{{ index }}"
       />
     </van-cell>
   </van-cell-group>
 </van-checkbox-group>
+
+
+<view class="pushBtn"><view style="width: 80%"><van-button color="linear-gradient(to right, #00eeffe5, #999fff)"  round block>发布服务</van-button></view></view>
