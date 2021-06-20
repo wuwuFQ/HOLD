@@ -43,6 +43,9 @@ App({
   },
   //判断是否是新用户， 是就增加记录
   checkUser(callBack) { 
+    wx.showLoading({
+      title: '加载中...',
+    })
     wx.cloud.callFunction({ 
     name: 'user_info',
     data: {
@@ -59,12 +62,18 @@ App({
          success: ress => {
           console.log("新增用户_id：" + ress.result._id);
           callBack();
+          wx.hideLoading({
+            success: (res) => {},
+          })
          }
         })
       } else {
         this.globalData.userInfo = result;
         console.log("老用户：" + result.openid);
         callBack();
+        wx.hideLoading({
+          success: (res) => {},
+        })
       }
     },
     fail: console.error

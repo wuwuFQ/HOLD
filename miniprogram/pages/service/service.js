@@ -110,6 +110,9 @@ Page({
   },
   //加载左侧数据
   getServiceItems() {
+    wx.showLoading({
+      title: '加载中...',
+    })
     var that = this;
     wx.cloud.callFunction({
       name: 'service_item',
@@ -122,6 +125,9 @@ Page({
           })
         }
         console.log(res);
+        wx.hideLoading({
+          success: (res) => {},
+        })
       }
 
     })

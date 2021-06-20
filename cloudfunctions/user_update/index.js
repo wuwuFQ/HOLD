@@ -22,6 +22,7 @@ exports.main = async (event, context) => {
         city: event.city,
         areas: event.areas,
         address: event.address,
+        projects: event.projects,
       }
     })
   } catch (e) {

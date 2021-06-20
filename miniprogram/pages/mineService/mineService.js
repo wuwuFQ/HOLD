@@ -66,6 +66,9 @@ Page({
 
   },
   getServiceItems() {
+    wx.showLoading({
+      title: '加载中...',
+    })
     var that = this;
     wx.cloud.callFunction({
       name: 'service_item',
@@ -77,6 +80,10 @@ Page({
             items: data,
           })
           that.loadUserInfo();
+        } else {
+          wx.hideLoading({
+            success: (res) => {},
+          })
         }
         console.log(data);
       }
@@ -99,6 +106,9 @@ Page({
           })
 
         }
+        wx.hideLoading({
+          success: (res) => {},
+        })
       },
       fail: console.error
     })
@@ -118,4 +128,36 @@ Page({
   },
 
   noop() { },
+
+  pushServiceHandle() {
+    wx.showLoading({
+      title: '发布中...',
+    })
+    var that = this;
+    wx.cloud.callFunction({
+      name: 'user_update',
+      data: {
+        projects: that.data.result,
+      },
+      success: res => {
+        wx.hideLoading({
+          success: (res) => {},
+        })
+        wx.showToast({
+          title: '发布成功',
+          icon: 'success',
+          duration: 1500,
+          success: () => {
+            setTimeout(() => {
+              wx.navigateBack({
+                delta: 1,
+              })
+            }, 1500);
+          }
+        })
+      }
+  
+    })
+  },
+
 })
