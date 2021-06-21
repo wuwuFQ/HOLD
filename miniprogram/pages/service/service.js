@@ -84,9 +84,10 @@ Page({
 
 
 
-  onClickNav({
-    detail = {}
-  }) {
+  onClickNav({detail = {}}) {
+    if (detail.index == this.data.mainActiveIndex) {
+      return;
+    }
     this.setData({
       mainActiveIndex: detail.index || 0,
     });
