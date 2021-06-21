@@ -9,7 +9,7 @@
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#999fff",
-    "navigationBarTitleText": "HOLD",
+    "navigationBarTitleText": "HOLD+",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

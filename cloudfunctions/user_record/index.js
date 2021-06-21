@@ -12,7 +12,7 @@ const _ = db.command     //获取数据库查询及更新指令
 exports.main = async (event, context) => {
   return await db.collection("hold_user")
     .where({
-      projects: _.in(event.text)
+      projects: _.in([event.text])
     })
     .get()
-}
+  }

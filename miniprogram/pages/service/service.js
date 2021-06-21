@@ -84,17 +84,25 @@ Page({
 
 
 
-  onClickNav({ detail = {} }) {
+  onClickNav({
+    detail = {}
+  }) {
     this.setData({
       mainActiveIndex: detail.index || 0,
     });
     console.log(detail);
+    this.getServiceList();
+
   },
 
-  onClickItem({ detail = {} }) {
+  onClickItem({
+    detail = {}
+  }) {
     const activeId = this.data.activeId === detail.id ? null : detail.id;
 
-    this.setData({ activeId });
+    this.setData({
+      activeId
+    });
   },
 
   itemClickHandle(e) {
@@ -123,8 +131,9 @@ Page({
           that.setData({
             items: data,
           })
+          that.getServiceList();
         }
-        console.log(res);
+        console.log(data);
         wx.hideLoading({
           success: (res) => {},
         })
@@ -134,7 +143,29 @@ Page({
   },
   // 加载右侧侧数据
   getServiceList() {
-
+    wx.showLoading({
+      title: '加载中...',
+    })
+    var that = this;
+    var item = that.data.items[that.data.mainActiveIndex];
+    wx.cloud.callFunction({
+      name: 'user_record',
+      data: {
+        text: item.text
+      },
+      success: res => {
+        if (!app.isNull(res.result)) {
+          var dataArr = res.result.data;
+            that.setData({
+              dataArr: dataArr,
+            })
+        }
+        wx.hideLoading({
+          success: (res) => {},
+        })
+      },
+      fail: console.error
+    })
   },
 
 
