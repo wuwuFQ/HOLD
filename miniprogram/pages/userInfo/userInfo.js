@@ -1,4 +1,5 @@
 // pages/userInfo/userInfo.js
+const utils = require('../../utils/util.js')
 const app = getApp();
 Page({
 
@@ -104,9 +105,24 @@ Page({
       })
       return;
     }
+    var idCardMsg = utils.identityIDCard(that.data.idCard);
+    if (!idCardMsg.isPass) {
+      wx.showToast({
+        title: idCardMsg.errorMsg,
+        icon: 'none'
+      })
+      return;
+    }
     if (app.isNull(that.data.phone)) {
       wx.showToast({
         title: '请填写您的手机号',
+        icon: 'none'
+      })
+      return;
+    }
+    if (!utils.isPhone(that.data.phone)) {
+      wx.showToast({
+        title: '请填写正确的手机号',
         icon: 'none'
       })
       return;
