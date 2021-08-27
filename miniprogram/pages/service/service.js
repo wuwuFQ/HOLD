@@ -8,11 +8,14 @@ Page({
    */
   data: {
     //右侧
-    dataArr: [],
+    dataArr_job: [],
+    dataArr_resume: [],
     // 是否已登录并完善信息
     isLogin: false,
-    mainActiveIndex: 0,
-    activeId: null,
+    mainActiveIndex_job: 0,
+    activeId_job: null,
+    mainActiveIndex_resume: 0,
+    activeId_resume: null,
     //左侧
     items: [],
 
@@ -84,39 +87,68 @@ Page({
 
 
 
-  onClickNav({detail = {}}) {
-    if (detail.index == this.data.mainActiveIndex) {
-      return;
-    }
-    this.setData({
-      mainActiveIndex: detail.index || 0,
-    });
-    console.log(detail);
-    this.getServiceList();
-
-  },
-
-  onClickItem({
+  onClickJobNav({
     detail = {}
   }) {
-    const activeId = this.data.activeId === detail.id ? null : detail.id;
+    var that = this;
+    if (detail.index == that.data.mainActiveIndex_job) {
+      return;
+    }
+    that.setData({
+      mainActiveIndex_job: detail.index || 0,
+    });
+    console.log(detail);
+    that.getJobList();
+  },
+
+  onClickResumeNav({
+    detail = {}
+  }) {
+    var that = this;
+    if (detail.index == that.data.mainActiveIndex_resume) {
+      return;
+    }
+    that.setData({
+      mainActiveIndex_resume: detail.index || 0,
+    });
+    console.log(detail);
+    that.getResumeList();
+
+  },
+
+  onClickJobItem({
+    detail = {}
+  }) {
+    const activeId = this.data.activeId_job === detail.id ? null : detail.id;
 
     this.setData({
-      activeId
+      activeId_job: activeId
     });
   },
 
-  itemClickHandle(e) {
-    wx.makePhoneCall({
-      phoneNumber: '19902019616',
-    })
+  onClickResumeItem({
+    detail = {}
+  }) {
+    const activeId = this.data.activeId_resume === detail.id ? null : detail.id;
+
+    this.setData({
+      activeId_resume: activeId
+    });
   },
-  // 个人信息
-  userInfoClick(e) {
+
+  jobItemClickHandle(event) {
+    console.log(event.detail);
     wx.navigateTo({
-      url: '../userInfo/userInfo',
+      url: '../jobDetail/jobDetail',
     })
   },
+
+  resumeItemClickHandle(event) {
+    wx.navigateTo({
+      url: '../resDetail/resDetail',
+    })
+  },
+ 
   //加载左侧数据
   getServiceItems() {
     wx.showLoading({
@@ -132,7 +164,8 @@ Page({
           that.setData({
             items: data,
           })
-          that.getServiceList();
+          that.getJobList();
+          that.getResumeList();
         }
         console.log(data);
         wx.hideLoading({
@@ -143,12 +176,12 @@ Page({
     })
   },
   // 加载右侧侧数据
-  getServiceList() {
+  getJobList() {
     wx.showLoading({
       title: '加载中...',
     })
     var that = this;
-    var item = that.data.items[that.data.mainActiveIndex];
+    var item = that.data.items[that.data.mainActiveIndex_job];
     wx.cloud.callFunction({
       name: 'user_record',
       data: {
@@ -157,9 +190,9 @@ Page({
       success: res => {
         if (!app.isNull(res.result)) {
           var dataArr = res.result.data;
-            that.setData({
-              dataArr: dataArr,
-            })
+          that.setData({
+            dataArr_job: dataArr,
+          })
         }
         wx.hideLoading({
           success: (res) => {},
@@ -169,82 +202,30 @@ Page({
     })
   },
 
-
-  /*
-  getPeopleList() {
-    var that = this;
-    wx.request({
-      url: app.globalData.httpURL + 'hold/service/peopleList',
-      method: 'GET',
-      success: res => {
-        let response = res.data;
-        if (response.code == 10000) {
-          that.setData({
-            dataArr: response.data,
-          })
-        } else {
-
-        }
-      }
+  getResumeList() {
+    wx.showLoading({
+      title: '加载中...',
     })
-  },
-
-  wxLogin() {
     var that = this;
-    wx.login({
-      success: res => {
-        console.log(res);
-        // 发送 res.code 到后台换取 openId（otvsv5ai27v_Wu3r55-vA1KJE0lU）, sessionKey, unionId
-        that.getWeChatOpenID(res.code);
-      }
-    })
-
-  },
-  // 获取openID
-  getWeChatOpenID: function (code) {
-    var that = this;
-    wx.request({
-      url: app.globalData.httpURL + 'wechat/getHoldOpenID',
+    var item = that.data.items[that.data.mainActiveIndex_resume];
+    wx.cloud.callFunction({
+      name: 'user_record',
       data: {
-        code: code
+        text: item.text
       },
       success: res => {
-        let response = res.data;
-        if (response.code == 10000) {
-          let openid = response.data.openid;
-          console.log("openid：" + openid);
-          app.globalData.openid = openid;
-          that.getUserInfo(openid);
-        }
-      }
-    })
-  },
-  //根据openID获取用户信息 可能为null
-  getUserInfo: function (openid) {
-    var that = this;
-    app.globalData.openid = openid;
-    wx.request({
-      url: app.globalData.httpURL + 'hold/user/getUserInfo',
-      data: {
-        openid: openid
-      },
-      success: res => {
-        console.log("userInfo：" + res.data.data);
-        app.globalData.userInfo = res.data.data;
-        if (!app.isNull(app.globalData.userInfo)) {
+        if (!app.isNull(res.result)) {
+          var dataArr = res.result.data;
           that.setData({
-            isLogin: true,
-          })
-          wx.setStorage({
-            data: app.globalData.userInfo,
-            key: 'userInfo',
+            dataArr_resume: dataArr,
           })
         }
-      }
+        wx.hideLoading({
+          success: (res) => {},
+        })
+      },
+      fail: console.error
     })
   },
-*/
-
-
 
 })

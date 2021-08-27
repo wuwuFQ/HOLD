@@ -1,0 +1,36 @@
+/* pages/jobDetail/jobDetail.wxss */
+
+.title_view {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+.condition_view {
+  display: flex;
+  margin: 0 20rpx;
+}
+.condition_view view {
+  font-size: 12px;
+  color: #666666;
+  margin-right: 20rpx;
+}
+.job_title {
+  margin: 20rpx 30rpx;
+}
+.job_content {
+  margin: auto 30rpx;
+  color: rgb(46, 50, 100);
+  font-size: 14px;
+}
+
+.saveButton {
+  margin: 30px 60px;
+  background-color: #999fff;
+  color: #333;
+  font-size: 16px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 20px;
+}

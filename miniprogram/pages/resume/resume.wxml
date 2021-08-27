@@ -1,0 +1,71 @@
+<!--pages/resume/resume.wxml-->
+
+<view class="job_title">选择求职岗位</view>
+<view class="tags_view">
+  <block wx:for="{{10}}">
+    <view class="tags_bg" style="background-color: #66c6f2;">
+      <view class="tags">
+        小时工
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class="job_title">微简历</view>
+<van-cell-group inset>
+  <van-cell title="期望薪资" value="{{payRange[0]['values'][payRange_1_default]}}-{{payRange[1]['values'][payRange_2_default]}}元" bind:click="clickPayRange" is-link arrow-direction="down" />
+  <van-cell title="学历" value="{{education[edu_default]}}" bind:click="clickEdu" is-link arrow-direction="down" />
+  <van-cell title="工作经验" value="{{exp[exp_default]}}" bind:click="clickExp" is-link arrow-direction="down" />
+</van-cell-group>
+
+<view class="job_title">个人亮点</view>
+<van-cell-group inset>
+  <van-field
+    value="{{ resumeContent }}"
+    type="textarea"
+    placeholder="工作经历、个人技能等"
+    autosize
+  />
+</van-cell-group>
+
+
+<view class="job_title">上传求职视频</view>
+<video id="myVideo"
+  src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+  style="width: 100%"></video>
+<view class="videoButton" >
+  <view>点击查看介绍模板</view>
+</view>
+
+<button class="saveButton" bindtap="saveButtonClick">发布</button>
+
+
+
+<!-- selectPicker -->
+<van-popup
+  show="{{ payRange_show }}"
+  round
+  position="bottom"
+  custom-style="height: 50%"
+  bind:close="onClosePayRange">
+  <van-picker columns="{{ payRange }}" default-index="{{ [payRange_1_default, payRange_2_default] }}" show-toolbar title="期望薪资" bind:confirm="onConfirmPayRange" bind:cancel="onCancelPayRange" visible-item-count	="4" />
+</van-popup>
+
+
+<van-popup
+  show="{{ edu_show }}"
+  round
+  position="bottom"
+  custom-style="height: 50%"
+  bind:close="onCloseEdu">
+  <van-picker columns="{{ education }}" default-index="{{ edu_default }}" show-toolbar title="学历" bind:confirm="onConfirmEdu" bind:cancel="onCancelEdu" visible-item-count	="4" />
+</van-popup>
+
+<van-popup
+  show="{{ exp_show }}"
+  round
+  position="bottom"
+  custom-style="height: 50%"
+  bind:close="onCloseExp">
+  <van-picker columns="{{ exp }}" default-index="{{ exp_default }}" show-toolbar title="经验" bind:confirm="onConfirmExp" bind:cancel="onCancelExp" visible-item-count	="4" />
+</van-popup>

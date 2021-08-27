@@ -8,11 +8,16 @@ Page({
    */
   data: {
     name: '',
+    age: '',
     idCard: '',
     phone: '',
     region: ['', '', ''],
     address: '',
     device: '',
+    gender: ['男', '女'],
+    gender_show: false,
+    gender_default: 0,
+
   },
 
   /**
@@ -87,6 +92,35 @@ Page({
       region: e.detail.value
     })
   },
+
+    // 性别Picker
+    clickGender() {
+      this.setData({
+        gender_show: true
+      })
+    },
+    onConfirmGender(event) {
+      const {
+        picker,
+        value,
+        index
+      } = event.detail;
+      this.setData({
+        gender_default: `${index}`,
+        gender_show: false
+      })
+  
+    },
+    onCloseGender() {
+      this.setData({
+        gender_show: false
+      })
+    },
+    onCancelGender() {
+      this.onCloseGender()
+    },
+  
+  
   /* 保存 */
   saveButtonClick() {
     var that = this;

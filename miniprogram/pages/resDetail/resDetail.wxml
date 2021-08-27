@@ -1,0 +1,27 @@
+<!--pages/resDetail/resDetail.wxml-->
+
+<view class="title_view">
+  <view style="font-size: 24px;">保姆</view>
+  <view style="color: rgb(255, 55, 55);">10-12K</view>
+</view>
+<view class="condition_view">
+  <view>大专</view>
+  <view>3-5年</view>
+  <view>女</view>
+  <view>28岁</view>
+</view>
+<view class="job_title">个人简介</view>
+<view class="job_content">
+1、有照顾老人的经验
+
+2、非常吃苦耐劳
+
+3、会做饭，川菜鲁菜都会做
+
+4、会使用基本家用电器
+
+</view>
+<view class="job_title">居住地址</view>
+<view class="job_content">北京市海淀区上地三街金隅嘉华大厦</view>
+
+<button class="saveButton" bindtap="saveButtonClick">预约面试</button>

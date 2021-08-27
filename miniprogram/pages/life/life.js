@@ -1,4 +1,4 @@
-// pages/video/video.js
+// pages/life/life.js
 Page({
 
   /**
@@ -62,5 +62,31 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  gridItemClickHandler(event) {
+console.log(event.currentTarget.dataset.index);
+var index = event.currentTarget.dataset.index;
+switch (index) {
+  case 0:
+    wx.navigateTo({
+      url: '../resume/resume',
+    })
+    break;
+
+  default:
+    wx.navigateTo({
+      url: '../job/job',
+    })
+    break;
+}
+  },
+// 事件处理函数
+bindViewTap() {
+  wx.navigateTo({
+    url: '../userInfo/userInfo',
+  })
+},
+
+
 })

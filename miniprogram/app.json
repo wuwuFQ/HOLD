@@ -3,8 +3,11 @@
     "pages/index/index",
     "pages/service/service",
     "pages/userInfo/userInfo",
-    "pages/video/video",
-    "pages/mineService/mineService"
+    "pages/life/life",
+    "pages/job/job",
+    "pages/resume/resume",
+    "pages/jobDetail/jobDetail",
+    "pages/resDetail/resDetail"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -22,7 +25,13 @@
       },
       {
         "pagePath": "pages/service/service",
-        "text": "服务",
+        "text": "家政",
+        "iconPath": "/images/service_default.png",
+        "selectedIconPath": "/images/service_select.png"
+      },
+      {
+        "pagePath": "pages/life/life",
+        "text": "生活馆",
         "iconPath": "/images/service_default.png",
         "selectedIconPath": "/images/service_select.png"
       }

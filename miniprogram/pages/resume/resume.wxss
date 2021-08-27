@@ -1,0 +1,44 @@
+/* pages/resume/resume.wxss */
+
+.videoButton {
+  display: flex;
+  flex-direction: row-reverse;
+  color: #999;
+  font-size: 14px;
+  margin-right: 20rpx;
+}
+
+.saveButton {
+  margin: 30px 60px;
+  background-color: #999fff;
+  color: #333;
+  font-size: 16px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 20px;
+}
+
+.job_title {
+  margin: 20rpx 30rpx;
+}
+
+.tags_view {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 10rpx;
+}
+
+.tags_bg {
+  margin: 10rpx;
+  line-height: 22px;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  border: 1rpx solid;
+  border-radius: 15px;
+}
+
+.tags {
+  margin: 6rpx 20px;
+}

@@ -9,12 +9,10 @@
 <view wx:if="{{isLogin}}" style="margin-top: 40px">
 <van-cell title="个人信息" is-link value="" bind:click="userInfoClick"/>
 <van-cell title="开锁流程" is-link value="" bind:click="playVideoClick" id="1"/>
-<van-cell title="修改密码" is-link value="" bind:click="playVideoClick" id="2"/>
-<van-cell title="设置指纹" is-link value="" bind:click="playVideoClick" id="3"/>
+<van-cell title="使用说明" is-link value="" bind:click="playVideoClick" id="2"/>
+<van-cell title="销售推广" is-link value="" bind:click="playVideoClick" id="3"/>
 <van-cell title="商务合作" is-link value="" bind:click="callMobilClick" />
-<van-cell title="我的服务项目" is-link value="" bind:click="serviceProjectClick" />
-
-
+<van-cell title="咨询客服" is-link value="" bind:click="serviceProjectClick" />
 
 </view>
 

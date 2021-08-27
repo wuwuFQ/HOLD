@@ -63,16 +63,10 @@ Page({
   },
 
   callMobilClick() {
-    wx.makePhoneCall({
-      phoneNumber: '19902019616',
-    })
+  
   },
 
-  serviceProjectClick() {
-wx.navigateTo({
-  url: '../mineService/mineService',
-})
-  },
+ 
 
   
 /*

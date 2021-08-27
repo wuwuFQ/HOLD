@@ -1,0 +1,29 @@
+<!--pages/jobDetail/jobDetail.wxml-->
+<view class="title_view">
+  <view style="font-size: 24px;">月嫂</view>
+  <view style="color: rgb(255, 55, 55);">10-12K</view>
+</view>
+<view class="condition_view">
+  <view>学历不限</view>
+  <view>经验不限</view>
+  <view>女</view>
+  <view>20-30岁</view>
+
+</view>
+<view class="job_title">工作内容</view>
+<view class="job_content">
+1、每周最少五天，周六，周日必须在
+
+2、有照顾老人的经验
+
+3、吃苦耐劳
+
+4、会做饭，要求做午饭和晚饭，要营养搭配
+
+5、会使用基本家用电器
+
+</view>
+<view class="job_title">工作地址</view>
+<view class="job_content">北京市昌平区经纬路130号福田大厦9层</view>
+
+<button class="saveButton" bindtap="saveButtonClick">联系雇主</button>

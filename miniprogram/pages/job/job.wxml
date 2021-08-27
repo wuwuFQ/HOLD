@@ -1,0 +1,100 @@
+<!--pages/job/job.wxml-->
+
+<view class="job_title">职位详情</view>
+<van-cell-group inset>
+  <van-cell title="职位类型" value="{{jobType[jobType_default]}}" bind:click="clickJobType" is-link arrow-direction="down" />
+  <van-cell title="薪资范围" value="{{payRange[0]['values'][payRange_1_default]}}-{{payRange[1]['values'][payRange_2_default]}}元" bind:click="clickPayRange" is-link arrow-direction="down" />
+  <van-cell title="薪资结算" value="{{payments[payments_default]}}" bind:click="clickPayments" is-link arrow-direction="down" />
+</van-cell-group>
+
+<view class="job_title">任职要求</view>
+<van-cell-group inset>
+  <van-cell title="性别" value="{{gender[gender_default]}}" bind:click="clickGender" is-link arrow-direction="down" />
+  <van-cell title="年龄" value="{{age[age_default]}}" bind:click="clickAge" is-link arrow-direction="down" />
+  <van-cell title="学历" value="{{education[edu_default]}}" bind:click="clickEdu" is-link arrow-direction="down" />
+  <van-cell title="工作经验" value="{{exp[exp_default]}}" bind:click="clickExp" is-link arrow-direction="down" />
+</van-cell-group>
+
+<view class="job_title">工作内容</view>
+<van-cell-group inset>
+  <van-field
+    value="{{ jobContent }}"
+    type="textarea"
+    placeholder="请描述一下工作内容"
+    autosize
+  />
+</van-cell-group>
+
+<view class="job_title">上传职位介绍视频（可选）</view>
+<video id="myVideo"
+  src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+  style="width: 100%"></video>
+<view class="videoButton">
+  <view>点击查看模板视频</view>
+</view>
+
+<button class="uploadButton" bindtap="uploadButtonClick">点击上传视频</button>
+
+<!-- selectPicker -->
+<van-popup
+  show="{{ jobType_show }}"
+  round
+  position="bottom"
+  custom-style="height: 50%"
+  bind:close="onCloseJobType">
+  <van-picker columns="{{ jobType }}" default-index="{{ jobType_default }}" show-toolbar title="职位类型" bind:confirm="onConfirmJobType" bind:cancel="onCancelJobType" visible-item-count	="4" />
+</van-popup>
+
+<van-popup
+  show="{{ payRange_show }}"
+  round
+  position="bottom"
+  custom-style="height: 50%"
+  bind:close="onClosePayRange">
+  <van-picker columns="{{ payRange }}" default-index="{{ [payRange_1_default, payRange_2_default] }}" show-toolbar title="薪资范围" bind:confirm="onConfirmPayRange" bind:cancel="onCancelPayRange" visible-item-count	="4" />
+</van-popup>
+
+<van-popup
+  show="{{ payments_show }}"
+  round
+  position="bottom"
+  custom-style="height: 50%"
+  bind:close="onClosePayments">
+  <van-picker columns="{{ payments }}" default-index="{{ payments_default }}" show-toolbar title="薪资结算" bind:confirm="onConfirmPayments" bind:cancel="onCancelPayments" visible-item-count	="4" />
+</van-popup>
+
+<van-popup
+  show="{{ gender_show }}"
+  round
+  position="bottom"
+  custom-style="height: 50%"
+  bind:close="onCloseGender">
+  <van-picker columns="{{ gender }}" default-index="{{ gender_default }}" show-toolbar title="性别" bind:confirm="onConfirmGender" bind:cancel="onCancelGender" visible-item-count	="4" />
+</van-popup>
+
+<van-popup
+  show="{{ edu_show }}"
+  round
+  position="bottom"
+  custom-style="height: 50%"
+  bind:close="onCloseEdu">
+  <van-picker columns="{{ education }}" default-index="{{ edu_default }}" show-toolbar title="学历" bind:confirm="onConfirmEdu" bind:cancel="onCancelEdu" visible-item-count	="4" />
+</van-popup>
+
+<van-popup
+  show="{{ exp_show }}"
+  round
+  position="bottom"
+  custom-style="height: 50%"
+  bind:close="onCloseExp">
+  <van-picker columns="{{ exp }}" default-index="{{ exp_default }}" show-toolbar title="经验" bind:confirm="onConfirmExp" bind:cancel="onCancelExp" visible-item-count	="4" />
+</van-popup>
+
+<van-popup
+  show="{{ age_show }}"
+  round
+  position="bottom"
+  custom-style="height: 50%"
+  bind:close="onCloseAge">
+  <van-picker columns="{{ age }}" default-index="{{ age_default }}" show-toolbar title="年龄" bind:confirm="onConfirmAge" bind:cancel="onCancelAge" visible-item-count	="4" />
+</van-popup>
