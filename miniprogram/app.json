@@ -7,7 +7,9 @@
     "pages/job/job",
     "pages/resume/resume",
     "pages/jobDetail/jobDetail",
-    "pages/resDetail/resDetail"
+    "pages/resDetail/resDetail",
+    "pages/book/book",
+    "pages/training/training"
   ],
   "window": {
     "backgroundTextStyle": "dark",

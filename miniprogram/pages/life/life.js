@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    itemsText: ['招聘', '求职', '养生预约', '美甲/美睫', '培训', '兼职', '个人设置', ],
   },
 
   /**
@@ -65,28 +65,52 @@ Page({
   },
 
   gridItemClickHandler(event) {
-console.log(event.currentTarget.dataset.index);
-var index = event.currentTarget.dataset.index;
-switch (index) {
-  case 0:
-    wx.navigateTo({
-      url: '../resume/resume',
-    })
-    break;
+    console.log(event.currentTarget.dataset.index);
+    var index = event.currentTarget.dataset.index;
+    switch (index) {
+      case 0:
+        wx.navigateTo({
+          url: '../job/job',
+        })
+        break;
+      case 1:
+        wx.navigateTo({
+          url: '../resume/resume',
+        })
+        break;
+      case 2:
+        wx.navigateTo({
+          url: '../book/book',
+        })
+        break;
+      case 3:
+        wx.navigateTo({
+          url: '../book/book',
+        })
+        break;
+      case 4:
+        wx.navigateTo({
+          url: '../training/training',
+        })
+        break;
+      case 5:
+        break;
+      case 6:
+        wx.navigateTo({
+          url: '../userInfo/userInfo',
+        })
+        break;
 
-  default:
-    wx.navigateTo({
-      url: '../job/job',
-    })
-    break;
-}
+      default:
+        break;
+    }
   },
-// 事件处理函数
-bindViewTap() {
-  wx.navigateTo({
-    url: '../userInfo/userInfo',
-  })
-},
+  // 事件处理函数
+  bindViewTap() {
+    wx.navigateTo({
+      url: '../userInfo/userInfo',
+    })
+  },
 
 
 })

@@ -1,0 +1,23 @@
+/* pages/training/training.wxss */
+
+.section {
+  margin: 40rpx 15rpx 10rpx;
+  font-size: 18px;
+  color: #333;
+}
+
+.row {
+  margin: 15rpx 40rpx;
+  font-size: 16px;
+  color: #666;
+}
+
+.submitButton {
+  margin: 30px 60px;
+  background-color: #999fff;
+  color: #333;
+  font-size: 16px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 20px;
+}

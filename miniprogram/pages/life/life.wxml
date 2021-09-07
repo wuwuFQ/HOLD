@@ -7,5 +7,5 @@
 </view>
 
 <van-grid column-num="3" gutter="{{ 10 }}">
-  <van-grid-item icon="photo-o" text="文字" wx:for="{{ 8 }}" wx:key="index" data-index="{{index}}" bind:click="gridItemClickHandler" />
+  <van-grid-item icon="photo-o" text="{{item}}" wx:for="{{ itemsText }}" wx:key="index" data-index="{{index}}" bind:click="gridItemClickHandler" />
 </van-grid>

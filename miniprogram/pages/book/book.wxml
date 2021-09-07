@@ -1,0 +1,44 @@
+<!--pages/book/book.wxml-->
+<wxs src="../../utils/tools.wxs" module="tools"/>
+<view class="book_image">
+  <view class="image">
+    <image style="width: 100%; height: 100%; background-color: red;"> </image>
+  </view>
+  <view class="image">
+    <image style="width: 100%; height: 100%; background-color: brown;"> </image>
+  </view>
+  <view class="image">
+    <image style="width: 100%; height: 100%; background-color: rgb(57, 156, 102);"> </image>
+  </view>
+  <view class="image">
+    <image style="width: 100%; height: 100%; background-color: rgb(209, 67, 238);"> </image>
+  </view>
+</view>
+<view class="job_title">选择预约项目</view>
+<view class="tags_view">
+  <block wx:for="{{5}}" wx:key="index">
+    <view class="tags_bg" style="background-color: #66c6f2;">
+      <view class="tags">
+        美容美甲
+      </view>
+    </view>
+  </block>
+</view>
+
+<van-cell-group>
+  <van-cell title="选择日期" value="{{tools.formatDate(currentDate, 'YY-MM-DD')}}" bind:click="clickDate" is-link arrow-direction="down" />
+  <van-cell title="选择时间" value="{{time[time_default]}}" bind:click="clickTime" is-link arrow-direction="down" />
+</van-cell-group>
+<button class="submitButton" bindtap="submitButtonClick">提交预约</button>
+
+<!-- selectPicker -->
+<van-popup show="{{ date_show }}" round position="bottom" custom-style="height: 50%" bind:close="onCloseDate">
+  <van-datetime-picker type="date" value="{{ currentDate }}" min-date="{{ minDate }}"
+    formatter="{{ formatter }}" show-toolbar title="日期" bind:confirm="onConfirmDate" bind:cancel="onCancelDate"
+    visible-item-count="4" />
+</van-popup>
+
+<van-popup show="{{ time_show }}" round position="bottom" custom-style="height: 50%" bind:close="onCloseTime">
+  <van-picker columns="{{ time }}" default-index="{{ time_default }}" show-toolbar title="时间段"
+    bind:confirm="onConfirmTime" bind:cancel="onCancelTime" visible-item-count="4" />
+</van-popup>

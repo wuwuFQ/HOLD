@@ -1,0 +1,13 @@
+<!--pages/training/training.wxml-->
+
+<view class="section">美甲/美睫培训</view>
+<view class="row">1、培训美甲、美睫相关技能</view>
+<view class="row">2、培训相关开店技能</view>
+<view class="row">3、支持开店，创业，自己当老板</view>
+
+<view class="section">财会培训</view>
+<view class="row">1.针对人员：想开公司的但不了解财务以及开公司的流程的老板</view>
+<view class="row">2.服务形式：视频授课的形式。手把手教会注册公司流程，以及各种专业术语和基本财务知识</view>
+<view class="row">3.售后支持：实操遇到问题可以免费咨询</view>
+
+<button class="submitButton" bindtap="submitButtonClick">报名咨询</button>
