@@ -154,6 +154,7 @@ Page({
       })
       return;
     }
+
     if (!utils.isPhone(that.data.phone)) {
       wx.showToast({
         title: '请填写正确的手机号',
