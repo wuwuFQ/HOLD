@@ -1,0 +1,49 @@
+<!--pages/collection/collection.wxml-->
+
+<van-tabs sticky>
+  <van-tab title="职位" >
+    <view class="rightList" wx:for="{{8}}" wx:key="index">
+      <view class="peopleItem" bindtap="jobItemClickHandle" id="{{index}}">
+        <view class="imageView">
+           <view>保姆</view>
+        </view>
+        <view class="contentView">
+        <view class="job_item_row">
+          <view style="flex-shrink: 0">待遇：</view>
+          <view>10K~15K，包吃住</view>
+        </view>
+        <view class="job_item_row">
+          <view style="flex-shrink: 0">地址：</view>
+          <view>北京市昌平区回龙观冠雅苑小区</view>
+
+        </view>
+        <view class="job_item_row">
+          <view style="flex-shrink: 0">备注：</view>
+          <view>有带孩子经验，年龄在40岁左右</view>
+        </view>
+      </view>
+      </view>
+    </view>
+  </van-tab>
+  <van-tab title="简历">
+    <view class="rightList" wx:for="{{10}}" wx:key="index">
+      <view class="peopleItem" bindtap="resumeItemClickHandle" id="{{index}}">
+        <view class="imageView">
+           <view>月嫂</view>
+        </view>
+        <view class="contentView">
+          <view id="info">
+            <view style="font-size: 15px">赵小美</view>
+            <view style="font-size: 12px; color: #aaa">女</view>
+            <view style="font-size: 12px; color: #aaa">28岁</view>
+          </view>
+          <view style="font-size: 14px">推荐指数：
+            <van-rate value="5" size="{{ 14 }}" readonly allow-half color="#ee0a24" void-color="#eee"
+              void-icon="star" />
+          </view>
+          <view style="font-size: 12px; color: #999">点击查看简历</view>
+        </view>
+      </view>
+    </view>
+  </van-tab>
+</van-tabs>

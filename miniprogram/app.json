@@ -9,7 +9,9 @@
     "pages/jobDetail/jobDetail",
     "pages/resDetail/resDetail",
     "pages/book/book",
-    "pages/training/training"
+    "pages/training/training",
+    "pages/collection/collection",
+    "pages/lock/lock"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -21,7 +23,7 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "门锁",
+        "text": "财务",
         "iconPath": "/images/index_default.png",
         "selectedIconPath": "/images/index_select.png"
       },

@@ -7,6 +7,13 @@
   margin-left: 20rpx;
   margin-right: 20rpx;
 }
+
+.collection {
+  color: cornflowerblue;
+  font-size: 12px;
+  text-align: center;
+}
+
 .condition_view {
   display: flex;
   margin: 0 20rpx;

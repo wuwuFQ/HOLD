@@ -1,7 +1,7 @@
 <!--pages/jobDetail/jobDetail.wxml-->
 <view class="title_view">
   <view style="font-size: 24px;">月嫂</view>
-  <view style="color: rgb(255, 55, 55);">10-12K</view>
+  <view style="color: rgb(255, 55, 55);"><view class="collection">收藏</view>10-12K</view>
 </view>
 <view class="condition_view">
   <view>学历不限</view>

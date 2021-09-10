@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    itemsText: ['招聘', '求职', '养生预约', '美甲/美睫', '培训', '兼职', '个人设置', ],
+    itemsText: ['招聘', '求职', '收藏', '门锁', '养生预约', '美甲/美睫', '培训', '兼职', '个人设置', ],
   },
 
   /**
@@ -80,22 +80,32 @@ Page({
         break;
       case 2:
         wx.navigateTo({
-          url: '../book/book',
+          url: '../collection/collection',
         })
         break;
       case 3:
         wx.navigateTo({
-          url: '../book/book',
+          url: '../lock/lock',
         })
         break;
       case 4:
         wx.navigateTo({
-          url: '../training/training',
+          url: '../book/book',
         })
         break;
       case 5:
+        wx.navigateTo({
+          url: '../book/book',
+        })
         break;
       case 6:
+        wx.navigateTo({
+          url: '../training/training',
+        })
+        break;
+      case 7:
+        break;
+      case 8:
         wx.navigateTo({
           url: '../userInfo/userInfo',
         })
