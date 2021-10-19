@@ -1,0 +1,23 @@
+<!--pages/shop/shop.wxml-->
+
+<view class="swiperView">
+  <swiper indicator-dots autoplay circular>
+    <block wx:for="{{background}}" wx:key="index">
+      <swiper-item>
+        <view class="swiper-item {{item}}"></view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view class="section_title">xx造型美容美发店</view>
+<van-cell-group inset>
+  <van-cell title="店铺地址:" value="北京市昌平区回龙观180号" bind:click="clickExp"/>
+  <van-cell title="店铺经营:" value="美容、美发、美甲、烫染" bind:click="clickExp"/>
+  <van-cell title="优惠价格:" value="美容1800元-优惠价900元 \n 美发80元-优惠价格50元 \n 美甲120元-优惠价格30元" bind:click="clickExp"/>
+</van-cell-group>
+
+<view class="buttons">
+<view><button class="submitButton" bindtap="couponButtonClick">领取优惠券</button></view>
+<view><button class="submitButton" bindtap="subscribeButtonClick">点击预约</button></view>
+</view>

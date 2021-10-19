@@ -34,7 +34,7 @@
 </view>
 
 <button class="uploadButton" bindtap="uploadButtonClick">点击上传视频</button>
-
+<view class="safeBottom"></view>
 <!-- selectPicker -->
 <van-popup
   show="{{ jobType_show }}"

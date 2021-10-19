@@ -1,0 +1,28 @@
+<!--pages/sales/sales.wxml-->
+
+<view class="cell">
+  <view class="row">
+    <view>销售单数：</view>
+    <view>5</view>
+  </view>
+  <view class="row">
+    <view>销售提成：</view>
+    <view>2000.00元</view>
+  </view>
+</view>
+<view class="row">
+<view>已提现：</view>
+<view>900.00元</view>
+</view>
+
+<view class="row"> 
+<view>待提现：</view>
+<view>800.00元</view>
+</view>
+
+<view class="row">
+<view>意向单：</view>
+<view>8单</view>
+</view>
+
+<button class="saveButton" bindtap="saveButtonClick">提现</button>

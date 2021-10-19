@@ -1,0 +1,80 @@
+/* pages/shop/shop.wxss */
+.swiperView {
+  margin-top: 30rpx;
+  position: relative;
+}
+swiper {
+  display: block;
+  height: 200px;
+}
+.swiper-item{
+  display: block;
+  height: 200px;
+}
+.demo-text-1{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #1AAD19;
+  color: #FFFFFF;
+  font-size: 36rpx;
+}
+.demo-text-1:before{
+  content: '广告位招租';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.demo-text-2{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #2782D7;
+  color: #FFFFFF;
+  font-size: 36rpx;
+}
+.demo-text-2:before{
+  content: '广告位招租';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.demo-text-3{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #F1F1F1;
+  color: #353535;
+  font-size: 36rpx;
+}
+.demo-text-3:before{
+  content: '广告位招租';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+.section_title {
+  margin: 20rpx 30rpx;
+}
+
+.buttons {
+  margin: 30px 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.submitButton {
+  background-color: #999fff;
+  color: #333;
+  font-size: 16px;
+  height: 40px;
+  width: 120px;
+  line-height: 40px;
+  border-radius: 20px;
+}

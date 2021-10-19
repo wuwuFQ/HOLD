@@ -1,0 +1,80 @@
+<!--pages/company/company.wxml-->
+<van-field label="销售人员:" model:value="{{salesmanArr[salesman_default]}}" readonly bindtap="clickSalesman" is-link arrow-direction="down"/>
+
+<view class="section_title">公司信息</view>
+<van-cell-group inset>
+  <van-field label="公司名称:" placeholder="请输入公司名称" model:value=""/>
+  <van-field label="备用名称（1）:" placeholder="请输入公司备用名称（1）" model:value="" center/>
+  <van-field label="备用名称（2）" placeholder="请输入公司备用名称（2）" model:value="" center/>
+  <van-field label="注册资金:" placeholder="请输入公司注册资金" model:value=""/>
+  <van-field label="经营期限:" placeholder="请输入公司经营期限" model:value=""/>
+  <van-field label="注册地址:" placeholder="请输入公司注册地址" model:value=""/>
+  <van-field label="办公地址(银行、税务):" placeholder="请输入公司实际办公地址" model:value="" center/>
+  <van-field label="公司座机:" placeholder="请输入公司座机" model:value=""/>
+  <van-field label="公司邮箱:" placeholder="请输入公司邮箱" model:value=""/>
+</van-cell-group>
+
+<view class="section_title">股东信息</view>
+<view wx:for="{{shareholderArr}}" wx:key="index">
+<van-cell-group title="股东（{{index + 1}}）" inset>
+  <van-field label="姓名:" placeholder="请输入股东姓名" model:value=""/>
+  <van-field label="身份证号:" placeholder="请输入股东身份证号" model:value=""/>
+  <van-field label="民族:" placeholder="请输入股东所属民族" model:value=""/>
+  <van-field label="身份证注册地:" placeholder="请输入身份证注册地" model:value="" center/>
+</van-cell-group>
+</view>
+<button class="continueAddButton" bindtap="continueAddButtonClick">继续添加股东信息</button>
+
+<view class="section_title">监事信息</view>
+<van-cell-group inset>
+  <van-field label="姓名:" placeholder="请输入监事姓名" model:value=""/>
+  <van-field label="身份证号:" placeholder="请输入监事身份证号" model:value=""/>
+  <van-field label="民族:" placeholder="请输入监事所属民族" model:value=""/>
+  <van-field label="身份证注册地:" placeholder="请输入身份证注册地" model:value="" center/>
+</van-cell-group>
+
+<view class="section_title">公司成员信息</view>
+<view class="section_title">法定代表人（不能做监事）</view>
+<van-cell-group inset>
+  <van-field label="姓名:" placeholder="请输入法人姓名" model:value=""/>
+  <van-field label="电话:" placeholder="请输入法人电话" model:value=""/>
+</van-cell-group>
+<view class="section_title">执行董事</view>
+<van-cell-group inset>
+  <van-field label="姓名:" placeholder="请输入执行董事姓名" model:value=""/>
+  <van-field label="电话:" placeholder="请输入执行董事电话" model:value=""/>
+</van-cell-group>
+<view class="section_title">总经理</view>
+<van-cell-group inset>
+  <van-field label="姓名:" placeholder="请输入经理姓名" model:value=""/>
+  <van-field label="电话:" placeholder="请输入经理电话" model:value=""/>
+</van-cell-group>
+<view class="section_title">监事</view>
+<van-cell-group inset>
+  <van-field label="姓名:" placeholder="请输入监事姓名" model:value=""/>
+  <van-field label="电话:" placeholder="请输入监事电话" model:value=""/>
+</van-cell-group>
+<view class="section_title">财务负责人（不能是法人）</view>
+<van-cell-group inset>
+  <van-field label="姓名:" placeholder="请输入财务负责人姓名" model:value=""/>
+  <van-field label="电话:" placeholder="请输入财务负责人电话" model:value=""/>
+</van-cell-group>
+<view class="section_title">企业联系人</view>
+<van-cell-group inset>
+  <van-field label="姓名:" placeholder="请输入企业联系人姓名" model:value=""/>
+  <van-field label="电话:" placeholder="请输入企业联系人电话" model:value=""/>
+</van-cell-group>
+
+
+<button class="saveButton" bindtap="saveButtonClick">提交</button>
+<view class="safeBottom"></view>
+
+
+<van-popup
+  show="{{ salesman_show }}"
+  round
+  position="bottom"
+  custom-style="height: 50%"
+  bind:close="onCloseSalesman">
+  <van-picker columns="{{ salesman }}" default-index="{{ salesman_default }}" show-toolbar title="业务员" bind:confirm="onConfirmSalesman" bind:cancel="onCancelSalesman" visible-item-count	="4" />
+</van-popup>

@@ -39,6 +39,7 @@
 
 <button class="saveButton" bindtap="saveButtonClick">发布</button>
 
+<view class="safeBottom"></view>
 
 
 <!-- selectPicker -->

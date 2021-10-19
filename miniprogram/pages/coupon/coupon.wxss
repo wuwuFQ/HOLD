@@ -1,4 +1,4 @@
-/* pages/collection/collection.wxss */
+/* pages/coupon/coupon.wxss */
 
 
 .rightList {
@@ -34,7 +34,7 @@
   width: 150rpx;
   font-size: 16px;
   text-align: center;
-  background-color: rgba(40, 228, 228, 0.178);
+  background-color: rgb(241, 168, 168);
   padding: 5px 8rpx;
 }
 
@@ -44,13 +44,14 @@
 .contentView>view {
   margin-top: 10rpx;
 }
-#info {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
+
+.section_title {
+  margin: 20rpx 30rpx;
 }
-#info view {
-  margin-right: 10rpx;
+
+.moreBtn {
+  display: flex;
+  justify-content: center;
 }
 
 .safeBottom {

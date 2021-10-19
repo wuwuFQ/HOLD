@@ -1,0 +1,23 @@
+<!--pages/subscribeList/subscribeList.wxml-->
+
+  <view class="rightList" wx:for="{{4}}" wx:key="index">
+    <view class="section_title">xxx美容美甲店</view>
+    <view class="peopleItem" bindtap="jobItemClickHandle" id="{{index}}">
+      <view class="imageView">
+        <view>店铺图片</view>
+      </view>
+      <view class="contentView">
+        <view class="job_item_row">
+          <!-- /*防止被压缩*/ -->
+          <view style="flex-shrink: 0">预约时间：</view>
+          <view>2021-10-19 16:00-18:00</view>
+        </view>
+        <view class="job_item_row">
+          <!-- /*防止被压缩*/ -->
+          <view style="flex-shrink: 0">商家地址：</view>
+          <view>北京市海淀区中关村南大街108号底商</view>
+        </view>
+      </view>
+    </view>
+  </view>
+<view class="safeBottom"></view>

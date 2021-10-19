@@ -30,7 +30,7 @@
   <van-cell title="选择时间" value="{{time[time_default]}}" bind:click="clickTime" is-link arrow-direction="down" />
 </van-cell-group>
 <button class="submitButton" bindtap="submitButtonClick">提交预约</button>
-
+<view class="safeBottom"></view>
 <!-- selectPicker -->
 <van-popup show="{{ date_show }}" round position="bottom" custom-style="height: 50%" bind:close="onCloseDate">
   <van-datetime-picker type="date" value="{{ currentDate }}" min-date="{{ minDate }}"

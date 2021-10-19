@@ -23,7 +23,6 @@ App({
     //   // 登录   在index做了
     //   // this.wxLogin();
     // }
-   
   },
   globalData: {
     openid: null,

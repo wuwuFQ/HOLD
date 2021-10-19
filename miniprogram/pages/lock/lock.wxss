@@ -6,16 +6,16 @@
 
 .buttons {
   margin: 30px 0;
-display: flex;
-justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .submitButton {
   background-color: #999fff;
   color: #333;
   font-size: 16px;
-  height: 30px;
+  height: 40px;
   width: 120px;
-  line-height: 30px;
+  line-height: 40px;
   border-radius: 20px;
 }

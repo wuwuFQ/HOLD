@@ -47,3 +47,6 @@
     </view>
   </van-tab>
 </van-tabs>
+
+
+<view class="safeBottom"></view>

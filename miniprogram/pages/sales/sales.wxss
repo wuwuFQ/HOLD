@@ -1,0 +1,23 @@
+/* pages/sales/sales.wxss */
+
+.cell {
+  display: flex;
+  /* background-color: aliceblue; */
+}
+
+.row {
+  display: flex;
+  /* background-color: aliceblue; */
+  border: 1rpx solid rgba(240, 249, 252, 0.678);
+  padding: 30rpx 20rpx;
+}
+
+.saveButton {
+  margin: 30px 60px;
+  background-color: #999fff;
+  color: #333;
+  font-size: 16px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 20px;
+}

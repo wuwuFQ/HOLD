@@ -1,18 +1,11 @@
-/* pages/job/job.wxss */
+/* pages/journal/journal.wxss */
 
-.job_title {
-  margin: 20rpx 30rpx;
+
+.van-field__label {
+  font-size: 16px;
 }
 
-.videoButton {
-  display: flex;
-  flex-direction: row-reverse;
-  color: #999;
-  font-size: 14px;
-  margin-right: 20rpx;
-}
-
-.uploadButton {
+.saveButton {
   margin: 30px 60px;
   background-color: #999fff;
   color: #333;

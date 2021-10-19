@@ -1,21 +1,13 @@
 <!--index.wxml-->
-  <view class="userinfo">
-      <view class="userinfo-avatar" bindtap="bindViewTap">
-        <open-data type="userAvatarUrl"></open-data>
-      </view>
-      <open-data type="userNickName"></open-data>
-  </view>
+ 
+<van-cell-group>
+  <van-field model:value="北京厚德智优科技有限公司"  label="公司名称:" readonly/>
+  <van-field model:value="北京上地三街金隅嘉华"  label="公司地址:" readonly/>
+  <van-field model:value="技术研发、财务管理、家政服务、美容养生"  label="经营范围:" readonly/>
+  <van-field model:value="10123845132087362"  label="税务编号:" readonly     border="{{ false }}"/>
+</van-cell-group>
 
-<view wx:if="{{isLogin}}" style="margin-top: 40px">
-<van-cell title="个人信息" is-link value="" bind:click="userInfoClick"/>
-<van-cell title="开锁流程" is-link value="" bind:click="playVideoClick" id="1"/>
-<van-cell title="使用说明" is-link value="" bind:click="playVideoClick" id="2"/>
-<van-cell title="销售推广" is-link value="" bind:click="playVideoClick" id="3"/>
-<van-cell title="商务合作" is-link value="" bind:click="callMobilClick" />
-<van-cell title="咨询客服" is-link value="" bind:click="serviceProjectClick" />
-
-</view>
-
-<view wx:else>
-  <button class="infoButton" bindtap="userInfoClick">完善信息才可使用功能</button>
+<view class="buttons">
+<view><button class="submitButton" bindtap="journalButtonClick">流水记账</button></view>
+<view><button class="submitButton" bindtap="registerButtonClick">上传注册</button></view>
 </view>

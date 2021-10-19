@@ -1,0 +1,29 @@
+<!--pages/journal/journal.wxml-->
+<wxs src="../../utils/tools.wxs" module="tools"/>
+
+<van-cell-group>
+  <van-field label="销售日期:" model:value="{{tools.formatDate(currentDate, 'YY-MM-DD')}}" readonly bindtap="clickDate" is-link arrow-direction="down" required/>
+
+  <van-field label="客户名称:" placeholder="请输入客户名称" model:value="" required/>
+  <van-field label="订单号码:" placeholder="请输入订单号码" model:value="" required/>
+  <van-field label="产品名称:" placeholder="请输入产品名称" model:value="" required/>
+  <van-field label="数量:" placeholder="请输入数量" model:value="" required/>
+  <van-field label="单价:" placeholder="请输入单价" model:value="" required/>
+  <van-field label="金额:" placeholder="请输入金额" model:value="" required/>
+  <van-field label="联系人:" placeholder="请输入联系人" model:value="" required/>
+  <van-field label="联系电话:" placeholder="请输入联系电话" model:value="" required/>
+  <van-field label="业务员:" placeholder="请输入业务员" model:value=""/>
+  <van-field label="送货车号:" placeholder="请输入送货车号" model:value=""/>
+  <van-field label="备注:" placeholder="备注..." model:value=""/>
+
+</van-cell-group>
+
+<button class="saveButton" bindtap="saveButtonClick">保存</button>
+<view class="safeBottom"></view>
+
+<!-- selectPicker -->
+<van-popup show="{{ date_show }}" round position="bottom" custom-style="height: 50%" bind:close="onCloseDate">
+  <van-datetime-picker type="date" value="{{ currentDate }}"
+    formatter="{{ formatter }}" show-toolbar title="日期" bind:confirm="onConfirmDate" bind:cancel="onCancelDate"
+    visible-item-count="4" />
+</van-popup>

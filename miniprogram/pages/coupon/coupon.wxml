@@ -1,0 +1,25 @@
+<!--pages/coupon/coupon.wxml-->
+<view wx:for="{{couponList}}" wx:for-index="idx">
+  <view class="section_title">xxx美容美甲店</view>
+  <view class="rightList" wx:for="{{item}}" wx:key="index" wx:for-item="coupon">
+    <view class="peopleItem" bindtap="jobItemClickHandle" id="{{index}}">
+      <view class="imageView">
+        <view>满减券</view>
+      </view>
+      <view class="contentView">
+        <view class="job_item_row">
+          <!-- /*防止被压缩*/ -->
+          <view style="flex-shrink: 0">优惠券：</view>
+          <view>满200减30</view>
+        </view>
+        <view class="job_item_row">
+          <!-- /*防止被压缩*/ -->
+          <view style="flex-shrink: 0">使用说明：</view>
+          <view>单个项目满200元可用，可叠加使用，仅限到店使用</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="moreBtn"><button size="mini" plain bindtap="moreBtnClick" data-idx="{{idx}}">点击查看更多</button></view>
+</view>
+<view class="safeBottom"></view>

@@ -11,7 +11,13 @@
     "pages/book/book",
     "pages/training/training",
     "pages/collection/collection",
-    "pages/lock/lock"
+    "pages/lock/lock",
+    "pages/sales/sales",
+    "pages/journal/journal",
+    "pages/company/company",
+    "pages/shop/shop",
+    "pages/subscribeList/subscribeList",
+    "pages/coupon/coupon"
   ],
   "window": {
     "backgroundTextStyle": "dark",

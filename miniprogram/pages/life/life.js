@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    itemsText: ['招聘', '求职', '收藏', '门锁', '养生预约', '美甲/美睫', '培训', '兼职', '个人设置', ],
+    itemsText: ['招聘', '求职', '收藏', '门锁', '好店发现', '我的预约', '优惠券', '培训', '财务销售', '个人设置', ],
   },
 
   /**
@@ -70,44 +70,52 @@ Page({
     switch (index) {
       case 0:
         wx.navigateTo({
-          url: '../job/job',
+          url: '../job/job',//招聘
         })
         break;
       case 1:
         wx.navigateTo({
-          url: '../resume/resume',
+          url: '../resume/resume',//求职
         })
         break;
       case 2:
         wx.navigateTo({
-          url: '../collection/collection',
+          url: '../collection/collection',//收藏
         })
         break;
       case 3:
         wx.navigateTo({
-          url: '../lock/lock',
+          url: '../lock/lock',//门锁
         })
         break;
       case 4:
         wx.navigateTo({
-          url: '../book/book',
+          url: '../shop/shop',//好店发现
         })
         break;
       case 5:
         wx.navigateTo({
-          url: '../book/book',
+          url: '../subscribeList/subscribeList',//我的预约
         })
         break;
       case 6:
         wx.navigateTo({
-          url: '../training/training',
+          url: '../coupon/coupon',//优惠券
         })
         break;
       case 7:
+        wx.navigateTo({
+          url: '../training/training',//培训
+        })
         break;
       case 8:
         wx.navigateTo({
-          url: '../userInfo/userInfo',
+          url: '../sales/sales',//财务销售
+        })
+        break;
+      case 9:
+        wx.navigateTo({
+          url: '../userInfo/userInfo',//个人设置
         })
         break;
 

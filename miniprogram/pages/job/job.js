@@ -19,11 +19,12 @@ Page({
       {
         values: payRange_columns,
         className: 'column1',
-      }],
-      payRange_show: false,
-      payRange_1_default: 12,
-      payRange_2_default: 14,
-  
+      }
+    ],
+    payRange_show: false,
+    payRange_1_default: 12,
+    payRange_2_default: 14,
+
     payments: ['日结', '周结', '月结'],
     payments_show: false,
     payments_default: 2,
@@ -129,8 +130,8 @@ Page({
     this.onCloseJobType()
   },
 
-   // 薪资范围picker
-   clickPayRange() {
+  // 薪资范围picker
+  clickPayRange() {
     this.setData({
       payRange_show: true
     })
@@ -141,8 +142,8 @@ Page({
       value,
       index
     } = event.detail;
-console.log(`${index[0]}`);
-console.log(index[1]);
+    console.log(`${index[0]}`);
+    console.log(index[1]);
     this.setData({
       payRange_1_default: `${index[0]}`,
       payRange_2_default: `${index[1]}`,

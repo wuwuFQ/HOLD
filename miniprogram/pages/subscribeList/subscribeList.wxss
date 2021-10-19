@@ -1,4 +1,4 @@
-/* pages/collection/collection.wxss */
+/* pages/subscribeList/subscribeList.wxss */
 
 
 .rightList {
@@ -13,6 +13,7 @@
   flex-direction: row;
   margin: 20rpx 5rpx;
   width: 90%;
+  min-height: 100px;
   background-color: white;
   box-shadow: 2px 2px 2px 2px #babdee;
   /*for Android*/
@@ -31,10 +32,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 150rpx;
+  width: 250rpx;
   font-size: 16px;
   text-align: center;
-  background-color: rgba(40, 228, 228, 0.178);
+  background-color: rgb(235, 241, 241);
   padding: 5px 8rpx;
 }
 
@@ -44,14 +45,12 @@
 .contentView>view {
   margin-top: 10rpx;
 }
-#info {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
+
+.section_title {
+  margin: 20rpx 0rpx;
+  width: 90%;
 }
-#info view {
-  margin-right: 10rpx;
-}
+
 
 .safeBottom {
   padding-bottom: constant(safe-area-inset-bottom);
